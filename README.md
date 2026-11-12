@@ -1,5 +1,5 @@
 # SDN link utilisation monitor and rerouter
-Course: 21CSE456T Software Defined Networks, scenario-based assessment (ONOS).
+Software Defined Networks, scenario-based assessment (ONOS).
 
 Tools: Mininet (two-path topology), ONOS 2.7.0 with the REST API, iperf, Python stdlib. Everything runs in Docker; nothing is installed on the host.
 

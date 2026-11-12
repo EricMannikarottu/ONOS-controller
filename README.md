@@ -1,5 +1,4 @@
 # SDN link utilisation monitor and rerouter
-
 Course: 21CSE456T Software Defined Networks, scenario-based assessment (ONOS).
 
 Tools: Mininet (two-path topology), ONOS 2.7.0 with the REST API, iperf, Python stdlib. Everything runs in Docker; nothing is installed on the host.
@@ -17,7 +16,7 @@ ONOS takes 2-5 minutes to start the first time; the script waits for it. Needs D
 4. Starts iperf UDP from h1 to h2 at 9 Mbps (90% of the link). The monitor polls port stats every 2 s and computes transmit rate per port.
 5. When the primary path stays above 80% for two polls, it posts higher-priority rules (priority 50000) that send h1 -> h2 traffic through s3. The alternate path is checked first and only used if it is below 80%.
 
-## Show the examiner
+## Verify work by:
 - REST responses: `out/rest_calls.log` (every call and its HTTP status)
 - Decision log: `out/decision_log.txt` (utilisation per poll, then the reroute decision)
 - Changed flows: `out/flows_before.json` vs `out/flows_after.json`. s1, s3 and s4 each gain one priority-50000 rule for h1 -> h2 (s1 out to s3, s3 out to s4, s4 out to h2). s2 is unchanged. Flow counts include ONOS default rules.
